@@ -9,14 +9,19 @@ public class NewBehaviourScript : MonoBehaviour
     public float Speed = 10f;
     public int State = 1;
     public int HP = 100;
+    public int a = 0;
 
     void OnTriggerStay(Collider Other)
     {
+        a = a + 1;
         Pushing();
+        Debug.Log("Соприкосновение! Соприкосновение с объектом длится уже " + a + " кадров!");
     }
     void OnTriggerEnter(Collider Other)
     {
+        a = a + 1;
         Pushing();
+        Debug.Log("Соприкосновение! Соприкосновение с объектом длится уже " + a + " кадров!");
     }
 
     void Pushing()
@@ -51,6 +56,14 @@ public class NewBehaviourScript : MonoBehaviour
         }
 
     }
+
+    void Start()
+    {
+        int b = 15, c = 40;
+        int d = b + c;
+        Debug.Log("Здравствуй, мир! Складываю переменную b, которая равна " + b + ", и переменную c, которая равна " + c + ". Ответ равен: " + d + ".");
+    }
+
     public void Button()
     {
         if (State == 1)
